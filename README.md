@@ -37,7 +37,7 @@ Update [job_preferences.json](job_preferences.json) to change your search and fi
 
 `requirements.baseline_salary`: If a salary range is visible, the job passes when the high end is at least $X amount. Unknown salary does not fail automatically.
 
-`requirements.fail_on_no_sponsorship` is currently `true`. Jobs fail if the posting says the company will not sponsor, cannot sponsor, requires work authorization without sponsorship, or similar wording.
+`requirements.fail_on_no_sponsorship`: Jobs fail if the posting says the company will not sponsor, cannot sponsor, requires work authorization without sponsorship, or similar wording.
 
 `requirements.require_official_or_company_link` is currently `true`. Jobs fail if the only apply link is a known third-party board or reposting site. Official ATS links and company-domain links pass.
 
