@@ -15,22 +15,13 @@ class JobScorer:
     SCORING_PROMPT_TEMPLATE = """
 You are a career advisor evaluating job opportunities for a candidate.
 Score the job from 1 to 10 based on fit. Be selective: only strong opportunities
-that are plausibly better than the candidate's current Verisk data scientist role should
+that are plausibly better than the candidate's current role should
 score 7+. The job has already passed hard requirements for location, seniority,
 years of experience, visible salary floor, sponsorship wording, active status, and
 apply-link quality.
 
 CANDIDATE PROFILE:
-- Current: Data Scientist at Verisk
-- Current experience: 2 years of experience
-- Skills: SQL, Python, Power BI, Snowflake, PySpark, product analytics, ML, NLP, data pipelines, dashboards, stakeholder collaboration
-- Target roles: Data Scientist, Data Analyst, Product Analyst, Product Manager, and closely related data/product analytics roles
-- Preferred locations: New York City Metropolitan Area
-- Baseline base salary: $130,000 when visible
-- H1B sponsorship needed: Yes
-- Career goal: data product, product analytics, applied AI, AI product, and technical product roles
-- Experience fit: 2-3 YOE requirements are best. Entry level or 0-1 YOE is acceptable but lower priority. 4 YOE is acceptable but lower priority. If no YOE is stated, treat experience fit as neutral/normal, not a weakness.
-- Company preference: big-name public companies and well-known IPO companies are the top priority; unicorns are also highly preferred; strong high-growth startups are acceptable if the role is excellent.
+- Describe yourself here
 
 JOB DETAILS:
 Title: {title}
@@ -48,21 +39,7 @@ Fit penalty signals:
 {fit_penalty_signals}
 
 EVALUATION CRITERIA:
-1. Big company / big name, preferably better than Verisk
-   - Well-known public/big-name company is strongest
-   - Unicorn company is also very strong
-   - Strong startup is positive but weaker than big-name/unicorn
-2. Location fit within the New York City Metropolitan Area
-3. Title/content fit: data science, data analysis, product analytics, or data-heavy product management
-4. Salary: visible range should support at least the $130,000 baseline
-5. Industry: tech company > traditional industry
-6. Hybrid/flexible options get a bonus
-7. H1B sponsorship likelihood and immigration risk
-   - If sponsorship evidence clearly says the company will not sponsor now or in the future, sponsor_risk must be "high".
-   - If sponsorship is not mentioned, sponsor_risk must be "no mention".
-   - If sponsorship is mentioned but unclear, judge whether risk is low, medium, or high from the exact wording.
-8. Years of experience fit: prefer 2-3 YOE; lower score for 0-1 or 4 YOE; neutral score if no YOE is stated; apply a meaningful penalty when the role clearly requires 5+ YOE.
-9. Rank down weak-but-eligible fits such as generic reporting-only work, unclear product ownership, low-growth companies, or missing sponsorship discussion.
+- List Criteria here
 
 Return only valid JSON in this exact shape:
 {{
