@@ -23,24 +23,19 @@ Update [job_preferences.json](job_preferences.json) to change your search and fi
 
 ### Search
 
-`search.title_keywords` controls exact title searches. The current defaults are:
+`search.title_keywords` controls exact title searches. 
 
-- Data Scientist
-- Data Analyst
-- Product Analyst
-- Product Manager
+`search.skill_queries` catches roles whose title is less direct but whose text matches your stack.
 
-`search.skill_queries` catches roles whose title is less direct but whose text matches your stack, such as SQL, Python, Power BI, product analytics, experimentation, and ML.
-
-`search.locations` controls the Google Jobs search locations. The current defaults search New York, NY and New Jersey.
+`search.locations` controls the Google Jobs search locations. 
 
 ### Requirements
 
-`requirements.allowed_location_terms` defines the New York City Metropolitan Area terms that pass the location gate. Add locations here when you want to expand the allowed area.
+`requirements.allowed_location_terms` defines the Area terms that pass the location gate. Add locations here when you want to expand the allowed area.
 
-`requirements.max_years_experience` is currently `4`. If the job text clearly requires more than 4 years, it fails.
+`requirements.max_years_experience`: If the job text clearly requires more than 4 years, it fails.
 
-`requirements.baseline_salary` is currently `130000`. If a salary range is visible, the job passes when the high end is at least $130K. Unknown salary does not fail automatically.
+`requirements.baseline_salary`: If a salary range is visible, the job passes when the high end is at least $X amount. Unknown salary does not fail automatically.
 
 `requirements.fail_on_no_sponsorship` is currently `true`. Jobs fail if the posting says the company will not sponsor, cannot sponsor, requires work authorization without sponsorship, or similar wording.
 
