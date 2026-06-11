@@ -88,7 +88,7 @@ class JobPreferenceFilter:
             requirements.get("banned_seniority_terms", [])
         )
         self.max_years_experience = int(requirements.get("max_years_experience", 4))
-        self.baseline_salary = int(requirements.get("baseline_salary", 130000))
+        self.baseline_salary = int(requirements.get("baseline_salary", X)) # replace by real baseline salary
         self.remote_requires_us = bool(requirements.get("remote_requires_us", True))
         self.fail_on_no_sponsorship = bool(requirements.get("fail_on_no_sponsorship", True))
         self.require_official_or_company_link = bool(
